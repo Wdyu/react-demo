@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './assets/css/style.css'
+import Img from './assets/images/am7.jpg'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <p style={{ color: 'red', fontSize: 30 }}>JSX语法注意事项</p>
+        <p className='box'>JSX语法注意事项</p>
+        <img src={Img} width='200' />
+        <br />
+        <label htmlFor='username'>
+          用户名：
+          <input type='text' id='username' />
+        </label>
+      </div>
+    )
+  }
 }
-
-export default App;
