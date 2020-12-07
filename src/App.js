@@ -14,6 +14,7 @@ export default class App extends Component {
           用户名：
           <input type='text' id='username' />
         </label>
+        <p>Hello, is me!</p>
       </div>
     )
   }
