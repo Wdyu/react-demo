@@ -1,21 +1,26 @@
 import React, { Component } from 'react'
-import { Router, Route } from 'react-router-dom'
-import { createHashHistory } from 'history'
+import Header from './common/common-main/Header'
+import Navbar from './common/common-main/Navbar'
+import Sidebar from './common/common-main/Sidebar'
 
-import Link from './components/link'
-import Index from './components/index'
-import List from './components/list'
+import './assets/css/style.css'
 
-const hashHistory = createHashHistory()
+import BrowerRouter from './router/index'
 
 export default class App extends Component {
   render() {
     return (
-      <Router history={hashHistory}>
-        <Route path='/' exact component={Link}></Route>
-        <Route path='/index' component={Index}></Route>
-        <Route path='/list' component={List}></Route>
-      </Router>
+      <div>
+        <Header>
+          <Navbar />
+        </Header>
+        <div className='sidebar'>
+          <Sidebar />
+        </div>
+        <div className='routepage'>
+          <BrowerRouter />
+        </div>
+      </div>
     )
   }
 }
