@@ -1,31 +1,21 @@
 import React, { Component } from 'react'
-import './assets/css/style.css'
-import Img from './assets/images/am7.jpg'
+import { Router, Route } from 'react-router-dom'
+import { createHashHistory } from 'history'
 
-let name = '小明',
-  age = 10,
-  list = [10, 20, 30, 40]
+import Link from './components/link'
+import Index from './components/index'
+import List from './components/list'
+
+const hashHistory = createHashHistory()
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <p>姓名：{name}</p>
-        <p>年龄：{age}</p>
-        <ul>
-          {list.map((el, key) => {
-            return <li key={key}>{el}</li>
-          })}
-        </ul>
-        <br />
-        <img src={Img} width='200' alt='el' />
-        <br />
-        <label htmlFor='username'>
-          用户名：
-          <input type='text' id='username' />
-        </label>
-        <p>Hello, is me!</p>
-      </div>
+      <Router history={hashHistory}>
+        <Route path='/' exact component={Link}></Route>
+        <Route path='/index' component={Index}></Route>
+        <Route path='/list' component={List}></Route>
+      </Router>
     )
   }
 }
